@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
+<head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="examples/css/keetool-editor.css">
         <meta charset="utf-8">
         <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
         <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
@@ -12,7 +10,6 @@
         <title>My Project</title>
         <link rel="shortcut icon" type="image/png" href="http://d1j8r0kxyu9tj8.cloudfront.net/files/1514906724GCgS6PPIrjqe0Vp.png" cph-ssorder="0">
         <link rel="icon" type="image/png" href="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
         <meta name="viewport" content="width=device-width">
         <link href="https://d255zuevr6tr8p.cloudfront.net/landingpage/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -120,28 +117,28 @@
                 <span class="navbar-toggler-bar"></span>
                 <span class="navbar-toggler-bar"></span>
             </button>
-            <a class="navbar-brand" href="home.html">
+            <a class="navbar-brand" href="home.php">
                <img src="logo.png" height="40px">
         </a >
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html" data-scroll="true">Trang chủ</a>
+                        <a class="nav-link" href="home.php" data-scroll="true">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll="true">Giới thiệu</a>
+                        <a class="nav-link" href="gioithieu.php" data-scroll="true">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="huongdan.html" data-scroll="true">Hướng dẫn</a>
+                        <a class="nav-link" href="huongdan.php" data-scroll="true">Hướng dẫn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tintuc.html" data-scroll="true">Tin tức</a>
+                        <a class="nav-link" href="tintuc.php" data-scroll="true">Tin tức</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dangnhap.html" data-scroll="true">Đăng nhập</a>
+                        <a class="btn btn-round btn-danger" style="background-color:#c50000; border : none" href="dangnhap.php" data-scroll="true">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-round btn-danger" style="background-color:#c50000; border : none" href="dangky.html" data-scroll="true">Đăng ký</a>
+                        <a class="nav-link" href="dangky.php" data-scroll="true">Đăng ký</a>
                     </li>
                 </ul>
             </div>
@@ -154,51 +151,26 @@
                 <div class="col-md-12">
                     <div class="card card-contact no-transition">
                         <br><br><br>
-                        <h3 class="card-title text-center">Nhập thông tin để đăng ký</h3>
+                        <h3 class="card-title text-center">Nhập thông tin để đăng Nhập</h3>
                         <br><br>
                         <div class="row">
-                            <div class="col-md-8 offset-md-2">
-                                <div role="form" id="contact-form" method="post" action="#">
+                            <div class="col-md-12 offset-md-3">
+                                <form method="POST" action="login_submit.php">
                                     <input type="hidden" name="_token" value="">
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Họ</label>
-                                                    <input id="e-name1" type="text" name="name" class="form-control" placeholder="Ví dụ: Nguyễn">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Tên</label>
-                                                    <input id="e-name2" type="text" name="name" class="form-control" placeholder="Ví dụ: Lan Anh">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Email</label>
-                                            <input id="e-email" type="email" name="email" class="form-control" placeholder="Ví dụ: android@colorme.vn">
-                                        </div>
+                                       
                                         <div class="form-group label-floating">
                                             <label class="control-label">Tên đăng nhập</label>
-                                            <input id="user" type="user" name="user" class="form-control" placeholder="Ví dụ: android1998">
+                                            <input id="username" type="username" name="username" class="form-control" placeholder="Ví dụ: android1998">
                                         </div>
                                         <div class="form-group label-floating">
                                             <label class="control-label">Mật khẩu</label>
                                             <input id="password" type="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
                                         </div>
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Nhắc lại mật khẩu</label>
-                                            <input id="password" type="password" name="password" class="form-control" placeholder="Nhắc lại mật khẩu">
-                                        </div>
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Số điện thoại</label>
-                                            <input id="e-message" name="question" class="form-control" rows="6" placeholder="Nhập số điện thoại"></input>
-                                        </div>
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Địa chỉ</label>
-                                            <textarea id="e-message" name="question" class="form-control" rows="6" placeholder="Nhập địa chỉ"></textarea>
-                                        </div>
+        
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div id="alert"> </div>
@@ -208,12 +180,12 @@
                                             <div class="col-md-6">
                                             </div>
                                             <div class="col-md-6">
-                                                <button type="submit" class="btn btn-primary pull-right" style="background-color:#c50000; border:none" id="submit-1">Đăng ký
+                                                <button type="acp" name ="acp" class="btn btn-primary pull-right" style="background-color:#c50000; border:none " id="submit-1">Đăng Nhập
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -221,6 +193,8 @@
             </div>
         </div>
     </div>
+ </div>
+ </div>
     <footer style="background-color:#171719; width: 100%; height: 400px;text-align: center; margin-bottom: -400px;">
         <div class="footera">
            
@@ -250,9 +224,5 @@
 <script src="./assets/js/paper-kit.js?v=2.0.0"></script>
 <!--  for fileupload -->
 <script src="./assets/js/jasny-bootstrap.min.js"></script>
-<script type="text/javascript" src="examples/js/keetool-editor.js"></script>
-<script>
-window.addEventListener('load', init('mini-editor'));
-</script>
 
 </html>
