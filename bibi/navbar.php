@@ -30,13 +30,13 @@ include 'config.php';
                         <a class="nav-link" href="sanpham.php" data-scroll="true">Sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gioithieu.php" data-scroll="true">Giới thiệu</a>
+                        <a class="nav-link" href="gioithieu.php" data-scroll="true">Liên hệ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="huongdan.php" data-scroll="true">Bài viết</a>
+                        <a class="nav-link" href="baiviet.php" data-scroll="true">Bài viết</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tintuc.php" data-scroll="true">Thảo luận</a>
+                        <a class="nav-link" href="giohang.php" data-scroll="true">Giỏ hàng</a>
                     </li>
                     <?php
                     if (isset($_SESSION["name"]) && !empty($_SESSION["name"])) {

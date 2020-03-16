@@ -6,12 +6,9 @@ session_unset();
 <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
-        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+        <title>Bivabi</title>
+        <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico" cph-ssorder="0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>My Project</title>
-        <link rel="shortcut icon" type="image/png" href="http://d1j8r0kxyu9tj8.cloudfront.net/files/1514906724GCgS6PPIrjqe0Vp.png" cph-ssorder="0">
-        <link rel="icon" type="image/png" href="">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
         <meta name="viewport" content="width=device-width">
         <link href="https://d255zuevr6tr8p.cloudfront.net/landingpage/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +43,8 @@ session_unset();
                 <div class="col-md-12">
                     <div class="card card-contact no-transition">
                         <br><br><br>
-                        <h3 class="card-title text-center">Nhập thông tin để đăng nhập</h3>
+                        <h3 class="card-title text-center">Đăng nhập để thực hiện các tính năng.</h3>
+                        <h4 class="card-title text-center">Nếu chưa có tài khoản hãy đăng ký ngay !</h4>
                         <br><br>
                         <div class="row">
                             <div class="col-md-12 offset-md-3">

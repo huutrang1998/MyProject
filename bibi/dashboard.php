@@ -33,6 +33,7 @@ if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
     <link href="./assets/css/demo.css" rel="stylesheet">
     <!--     Fonts and icons     -->
     <link href="./assets/css/nucleo-icons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
         .overlay2 {
             height: 100%;
@@ -89,13 +90,58 @@ if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
                 right: 35px;
             }
         }
+        #content{
+  display:none;
+}
     </style>
 </head>
 
 <body>
-<div id="navbar-zone"></div>
-   <script>$("#navbar-zone").load('navbar.php')</script>
-    <br><br><br><br>
+<nav class="navbar navbar-toggleable-md fixed-top nav-down">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.php">
+                <img src="logo.png" height="30px">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.php"  data-scroll="true">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sanpham.php" data-scroll="true">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="baiviet.php" data-scroll="true">Bài viết</a>
+                    </li>
+                    <?php
+                    if (isset($_SESSION["name"]) && !empty($_SESSION["name"])) {
+                        echo ' <li class="nav-item">
+                        <a class="nav-link" href="trangcanhan.php" data-scroll="true">';
+                        echo $_SESSION["name"];
+                        echo '</a> </li>
+                        <form action="logout.php" method="POST">
+                        <li class="nav-item">
+                        <a class="nav-link" href="dangnhap.php" data-scroll="true" name="logout">Đăng xuất</a>
+                        </li> </form>';
+                    } else {
+                        echo   ' <li class="nav-item">
+                                 <a class="nav-link" href="dangnhap.php" data-scroll="true">Đăng nhập</a>
+                                 </li>
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="dangky.php" data-scroll="true">Đăng ký</a>
+                                 </li> ';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
     <div class="main">
 
         <br><br>
@@ -143,8 +189,18 @@ if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
                 </div>
             </div>
         </div>
-        <div class="container" style="text-align:center;border-radius:10px;">
-            <br><br>
+        <div class="container" style="text-align:center;border-radius:5px; width:100%;height:100%;">
+            <br>
+             <button id="toggle" class="btn btn-round btn-danger">Chọn chức năng quản lý</button>
+            <div id="content">
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="dashboard.php">Quản lý sản phẩm</a>
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="quan_ly_khach_hang.php">Quản lý khách hàng</a>
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="quan_ly_don_hang.php">Quản lý đơn hàng</a>
+            </div>                      
+        </div>
+        <div class="container" style="text-align:center;border-radius:10px; width:100%;height:100%; overflow: scroll;">
+            <br>
+            <br>
             <h5 class="btn btn-round btn-primary" id="add-product" onclick="openNav()">Thêm sản phẩm</h5>
 
             <div class="container" style="text-align: center;justify-content: center;">
@@ -169,7 +225,7 @@ if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
                     </div>
                     <div class="col-md-4" style="margin-top:auto; margin-bottom:auto; margin-left:0px;">
                             <a href=' . 'product_update_form.php?id=' . $row['id'] . ' class="btn btn-danger btn-round" style=" color: white;margin-right:10px;"> Sửa</a>
-                            <a href=' . 'delete_product.php?id="' . $row['id'] . '" class="btn btn-danger btn-round" name="delete" type="delete" style=" color: white;"> Xoá</a>
+                            <a href=' . 'delete_product.php?id=' . $row['id'] . ' class="btn btn-danger btn-round" name="delete" type="delete" style=" color: white;"> Xoá</a>
                           </div>
                          
                     </div>
@@ -224,6 +280,14 @@ if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
     function closeNav() {
         document.getElementById("myNav").style.height = "0%";
     }
+</script>
+<script type="text/javascript">
+    var toggle  = document.getElementById("toggle");
+var content = document.getElementById("content");
+
+toggle.addEventListener("click", function() {
+  content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+});
 </script>
 
 </html>

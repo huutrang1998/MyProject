@@ -55,7 +55,7 @@ $id=$_GET['id'];
                             <p class="price"><strong> Giá :' . ($row['price']) . '</strong></p>
                             <p> Mô tả chi tiết :' . ($row['description']) . '</p>
                             <br><br> 
-                            <a class="btn btn-danger btn-round" style=" color: white;margin-right:10px;"> Đặt hàng</a>
+                            <a href=' . 'them_vao_gio_hang.php?id=' . $row['id'] . ' class="btn btn-danger btn-round" name="delete" type="delete" style=" color: white;"> Thêm vào giỏ hàng </a>
                     </div>
                     </div>
                     </form>

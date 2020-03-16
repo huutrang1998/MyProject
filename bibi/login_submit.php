@@ -1,5 +1,4 @@
 
-<?php session_start(); ?>
 <?php
   include 'config.php';
    if( isset($_POST['acp']) &&  $_POST["username"] != '' && $_POST["password"] != '')
@@ -11,9 +10,16 @@
      $sql = "SELECT * FROM user WHERE username='$username' AND password='$password' ";
      $user= mysqli_query($conn,$sql);
      if(mysqli_num_rows($user)>0){
-      $_SESSION['name']=$username;
-     header("location:trangcanhan.php");
-    
+      while ($row = mysqli_fetch_assoc($user)) {
+      $_SESSION['name']=$row['username'];
+      $_SESSION['id']=$row['id'];
+      $_SESSION['fullname']=$row['fullname'];
+      $_SESSION['email']=$row['email'];
+      $_SESSION['phonenumber']=$row['phonenumber'];
+
+      }
+  
+      header("location:trangcanhan.php");
      }
      else
      {

@@ -7,7 +7,7 @@
      $comment = $_POST["comment"];;
     $sql = "INSERT INTO comment (username,noidung) VALUES ('$username','$comment') "; 
      mysqli_query($conn,$sql);
-      header("location:tintuc.php");
+      header("location:trangcanhan.php");
   }
   else
   {

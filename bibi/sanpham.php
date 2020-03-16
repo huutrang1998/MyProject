@@ -11,8 +11,8 @@ include 'config.php';
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Bibi</title>
-    <link rel="shortcut icon" type="image/png" href="http://d1j8r0kxyu9tj8.cloudfront.net/files/1514906724GCgS6PPIrjqe0Vp.png" cph-ssorder="0">
+    <title>Bivabi</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.ico" cph-ssorder="0">
     <link rel="icon" type="image/png" href="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -101,7 +101,7 @@ include 'config.php';
    <script>$("#navbar-zone").load('navbar.php')</script>
     <div class="wrapper">
         <br><br><br><br><br>
-        <div style="text-align:center; margin-top:20px;"><hr> <h4>Một số mâu giao diện Website</h4><hr></div>
+        <div style="text-align:center; margin-top:20px;"><hr> <h4>Một số mẫu giao diện Website</h4><hr></div>
         <div style="padding: 40px">
                 <div class="masonry">
                     <?php

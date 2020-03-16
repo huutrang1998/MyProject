@@ -25,6 +25,7 @@ include 'config.php';
     <link href="./assets/css/paper-kit.css" rel="stylesheet">
     <link href="./assets/css/demo.css" rel="stylesheet">
     <!--     Fonts and icons     -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700" rel="stylesheet" type="text/css">
     <style type="text/css">
         .masonry {
             columns: 4;
@@ -119,7 +120,7 @@ include 'config.php';
                         <a class="nav-link" href="gioithieu.php" data-scroll="true">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="huongdan.php" data-scroll="true">Bài viết</a>
+                        <a class="nav-link" href="baiviet.php" data-scroll="true">Bài viết</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tintuc.php" data-scroll="true">Thảo luận</a>
@@ -155,10 +156,35 @@ include 'config.php';
         </div>
         <div class="main">
         </div>
-        <div class="container" style="padding: 0px">
+        <div class="container" style="padding: 40px">
             <div style="text-align:center;"><hr> <h4>Lợi ích từ Website</h4><hr> </div>
             
             <div class="row">
+                   <!-- one card -->
+                   <div class="col-md-4">
+                        <div class="card-big-shadow">
+                            <div class="card card-just-text" data-background="color" data-color="green" data-radius="5px">
+                                <div class="card-block">
+                                    <h4 class="card-title"><a href="#paper-kit">Giúp bạn kinh doanh 24/24</a></h4>
+                                    <p class="card-description"> Khi trang Web hoạt động thì dẫu bạn có đang nghỉ thì vẫn có thể tiếp nhận yêu cầu từ khách hàng </p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                <!-- end card -->
+                  <!-- one card -->
+                  <div class="col-md-4">
+                        <div class="card-big-shadow">
+                            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="5px">
+                                <div class="card-block">
+                                    <h4 class="card-title"><a href="#paper-kit">Giới thiệu sản phẩm</a></h4>
+                                    <p class="card-description"> Web giúp bạn đăng tải hình ảnh và giới thiệu sản phẩm của của hàng ,doanh nghiệp mình. </p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                <!-- end card -->
+             
                 <!-- one card -->
                 <div class="col-md-4">
                         <div class="card-big-shadow">
@@ -171,30 +197,7 @@ include 'config.php';
                         </div>
                     </div>
                 <!-- end card -->
-                 <!-- one card -->
-                 <div class="col-md-4">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="5px">
-                                <div class="card-block">
-                                    <h4 class="card-title"><a href="#paper-kit">Giới thiệu sản phẩm</a></h4>
-                                    <p class="card-description"> Web giúp bạn đăng tải hình ảnh và giới thiệu sản phẩm của của hàng ,doanh nghiệp mình. </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                <!-- end card -->
-                <!-- one card -->
-                 <div class="col-md-4">
-                        <div class="card-big-shadow">
-                            <div class="card card-just-text" data-background="color" data-color="green" data-radius="5px">
-                                <div class="card-block">
-                                    <h4 class="card-title"><a href="#paper-kit">Giúp bạn kinh doanh 24/24</a></h4>
-                                    <p class="card-description"> Khi trang Web hoạt động thì dẫu bạn có đang nghỉ thì vẫn có thể tiếp nhận yêu cầu từ khách hàng </p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                <!-- end card -->
+               
             </div>
 
             <div style="text-align:center;"><hr> <h4>Bạn cần làm gì để có một Website riêng ?</h4><hr> </div>
@@ -251,7 +254,7 @@ include 'config.php';
                         </div>
                     </div>
                 <!-- end card -->
-                 <div class="container">
+            <div class="container">
                 <div style="text-align:center;"><hr> <h4>Các chức năng cơ bản của Website</h4><hr><br><br> </div>
                 
                     <div class="table-responsive">

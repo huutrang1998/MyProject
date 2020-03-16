@@ -1,13 +1,10 @@
 <!doctype html>
 <?php
-include 'config.php';
-if (isset($_SESSION['name']) == false) {
+include "config.php";
+if ((isset($_SESSION['name']) == false) || ($_SESSION['name'] != "admin")) {
     header("location:dangnhap.php");
-} else if ($_SESSION['name'] == "admin") {
-    header("location:dashboard.php");
 }
 ?>
-
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta charset="utf-8">
@@ -36,8 +33,12 @@ if (isset($_SESSION['name']) == false) {
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="./assets/css/nucleo-icons.css" rel="stylesheet">
     <style type="text/css">
-
+    #content{
+    display:none;
+     }
     </style>
+   
+
 </head>
 
 <body>
@@ -46,26 +47,25 @@ if (isset($_SESSION['name']) == false) {
         $("#navbar-zone").load('navbar.php')
     </script>
     <br><br><br>
-    <div class="profile-content section">
         <div class="container">
-            <div class="row">
-                <div class="profile-picture text-center">
-                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                        <div class="name">
-                            <h4 class="title text-center" style="font-weight:bold; text-transform:uppercase;"><?php echo $_SESSION['fullname']; ?></h4>
-                        </div>
-                    </div>
-                </div>
+            <br>
+            <div class="container" style="text-align:center;border-radius:5px; width:100%;height:100%;">
+            <br>
+             <button id="toggle" class="btn btn-round btn-danger">Chọn chức năng quản lý</button>
+            <div id="content">
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="dashboard.php">Quản lý sản phẩm</a>
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="quan_ly_khach_hang.php">Quản lý khách hàng</a>
+                 <a id="toggle" class="btn btn-round btn-danger" style="margin-top: 10px;" href="quan_ly_don_hang.php">Quản lý đơn hàng</a>
+            </div>                      
+        </div>
             </div>
             <div class="container" style="text-align:center;border-radius:10px;">
             <br><br>
 
             <div class="container" style="text-align: center;justify-content: center;">
-                <h3>Đơn hàng đã gửi</h3><br><br>
+                <h3>Tổng đơn hàng của khách</h3><br><br>
                 <?php
-                $user=$_SESSION['id'];
-
-                $sql = "SELECT * FROM `donhang` WHERE userID=$user ORDER BY time DESC";
+                $sql = "SELECT * FROM `donhang`";
                 $result = mysqli_query($conn, $sql);
 
                 while ($row_temp = mysqli_fetch_assoc($result)) {
@@ -73,20 +73,25 @@ if (isset($_SESSION['name']) == false) {
                      $sql ="SELECT * FROM `test` WHERE id= $productid";
                      $temp=mysqli_query($conn,$sql);
                      $row=mysqli_fetch_assoc($temp);
+                     $userID=$row_temp['userID'];
+                     $sql="SELECT * FROM user WHERE id=$userID ";
+                     $user=mysqli_fetch_assoc(mysqli_query($conn,$sql));
                      echo  '
                  <form action="delete_product.php" method="POST">
                  <div class="row" style="background-color:#fafafa;border-radius:10px;">
+                 <div class="col-md-4" style="margin-top:auto; margin-bottom:auto; margin-left:0px;">
+                          '. $user['fullname'].'  <br> '. $user["phonenumber"].' <br>
+                          <span>Ngày đặt hàng: </span> '. $row_temp["time"] .'
+                 </div>
                          <div class="col-md-4" style="padding:15px;">
-                         <img src="data:image/jpeg;base64,' . base64_encode($row['Data']) . '" style="width: 150px;border-radius:10px;">
+                         <img src="data:image/jpeg;base64,' . base64_encode($row['Data']) . '" style="width: 100px;border-radius:10px;">
                          </div>
                          <div class="col-md-4" style="margin-top:auto; margin-bottom:auto">
-                             <h6>Tên sản phẩm :' . ($row['name']) . '</h6>
+                             <h6>Sản phẩm :' . ($row['name']) . '</h6>
                              <p class="price"><strong> Đơn giá :' . ($row['price']) . '</strong></p>
                              <p class="price"><strong> Số lượng :' . ($row_temp['number']) . '</strong></p>
                      </div>
-                     <div class="col-md-4" style="margin-top:auto; margin-bottom:auto; margin-left:0px;">
-                            
-                           </div>
+                    
                      </div>
                      </form>
                      <br><br>
@@ -96,10 +101,7 @@ if (isset($_SESSION['name']) == false) {
 
             </div>
         </div>
-        </div>
     </div>
-    </div>
-
     <div id="footer"></div>
     <script>
         $("#footer").load('footer.html');
@@ -114,3 +116,11 @@ if (isset($_SESSION['name']) == false) {
 <script src="./assets/js/paper-kit.js?v=2.0.0"></script>
 <!--  for fileupload -->
 <script src="./assets/js/jasny-bootstrap.min.js"></script>
+ <script type="text/javascript">
+    var toggle  = document.getElementById("toggle");
+var content = document.getElementById("content");
+
+toggle.addEventListener("click", function() {
+  content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+});
+</script>
